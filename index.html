@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left_side">
+        <div class="cards">
+          <div class="front_card">
+            <img src="images/bg-card-front.png" alt="f_img"  class="img1"/>
+            <div class="logo">
+              <img src="images/card-logo.svg" alt="Logo" />
+              <h1>0000 0000 0000 0000</h1>
+            </div>
+            <div class="user_information">
+              <span class="user_name" id="user_name">Name</span>
+              <div>
+                <span class="MM_YY">
+                  <span id="user_month">00</span>
+                  /
+                  <span id="user_year">00</span>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="back_card">
+            <img src="images/bg-card-back.png" alt="BC_card" />
+            <span id="cvc-num">000</span>
+          </div>
+        </div>
+      </div>
+      <div class="right_side">
+        <form>
+          <div class="grid1">
+            <label for="user_name">Cardholder Name</label>
+            <input
+              type="text"
+              id="user_name"
+              placeholder="Name e.g  Ahmar Iftikhar"
+              required
+            />
+            <small></small>
+          </div>
+
+          <div class="grid2">
+            <label for="user_num">Card Number</label>
+            <input
+              type="number"
+              id="user_num"
+              placeholder="Card Number e.g. 1234 5678 9123 0000"
+              maxlength="19"
+              required
+            />
+            <small></small>
+          </div>
+          <div class="grid3">
+            <div class="exp_date">
+              <label for="MM">Exp. Date (MM/YY)</label>
+              <div class="card_date">
+                <input type="text" placeholder="MM" id="MM" 
+                maxlength="2"
+                minlength="2"
+                required/>
+                
+                <input type="text" id="YY" placeholder="YY"
+                maxlength="4"
+                minlength="4"
+                required />
+              </div> 
+              <small id="MM_YY_err"></small> 
+            </div>
+            <div class="cvc_num">
+              <label for="cvc">CVC</label>
+              <input type="text" placeholder="e.g. 123" id="cvc" />
+              <small id="cvc_err"></small>
+            </div>
+          </div>
+          <div class="grid4">
+            <button type="submit" id="submit_btn">Confirm</button>
+          </div>
+        </form>
+        <div class="complete_msg">
+          <div class="logo">
+            <img src="images/icon-complete.svg" alt="Thanks_logo" />
+          </div>
+          <h1>Thank you!</h1>
+          <p>We've added your card details</p>
+          <button type="reset" id="reset_btn">Continue</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
